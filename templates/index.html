@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'sections/head.html' %}
+</head>
+
+<body class="">
+    <div class="container">
+        <div data-role="appbar">
+            <a href="#" class="brand">
+                <img src="imgs/icon.png" width="30px" height="30px">
+            </a>
+            <a href="#" class="brand no-hover">DeliciousPy Telegram <a href="{{ info['identity']['link'] }}">@deliciouspy</a></a>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="container">
+        <!-- content here -->
+        <div class="grid">
+            <div class="row">
+                <div class="cell">
+                    <div class="icon-box border bd-default">
+                        <div class="icon bg-cyan fg-white"><span class="mif-chat"></span></div>
+                        <div class="content p-4">
+                            <div class="text-upper">members</div>
+                            <div class="text-upper text-bold text-lead">2K</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="icon-box border bd-default">
+                        <div class="icon bg-violet fg-white"><span class="mif-trophy"></span></div>
+                        <div class="content p-4">
+                            <div class="text-upper">tournaments</div>
+                            <div class="text-upper text-bold text-lead">1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="icon-box border bd-default">
+                        <div class="icon bg-green fg-white"><span class="mif-checkmark"></span></div>
+                        <div class="content p-4">
+                            <div class="text-upper">daily views</div>
+                            <div class="text-upper text-bold text-lead">300</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <a href="{{ info['identity']['link'] }}" data-role="ripple" class="no-a" style="text-decoration: none">
+                        <div class="bg-orange fg-white p-4" style="text-align: center;">
+                            <div class="text-upper">JOIN</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cell">
+                    <a href="{{ info['identity']['source'] }}" data-role="ripple" class="no-a" style="text-decoration: none">
+                        <div class="bg-orange fg-white p-4" style="text-align: center;">
+                            <div class="text-upper">edit on github</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            {% set events = sorted(info['events'], reverse=True) %}
+            {% for event in events %}
+            <div id="event-{{ loop.index }}" data-role="panel" data-title-caption="#{{ loop.index }} {{ event['name'] }}" data-collapsible="{{ 'true' if loop.index==1 else 'false' }}">
+                <div>
+                    <div class="info-button success bd-green rounded">
+                        <a href="#" class="button">Start</a>
+                        <a href="#" class="info">{{ event['start'] }}</a>
+                    </div>
+                    <div class="info-button bg-red fg-white bd-red rounded">
+                        <a href="#" class="button">End</a>
+                        <a href="#" class="info">{{ event['end'] }}</a>
+                    </div>
+                </div>
+                {% for section in event['sections'] %}
+                    <h4>{{ section['title'] }}</h4>
+                    <p>{{ section['info'] }}</p>
+                {% endfor %}
+            <a href="{{ event['call to action'] }}" target="_blank" class="button primary">submit</a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    <div>
+        <a href="https://pypi.org/project/jamstack">generated using jamstack package on pypi</a>
+    </div>
+    {% include 'sections/closing_scripts.html' %}
+</body>
+
+</html>

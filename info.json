@@ -1,0 +1,12 @@
+{
+	"head":{
+		"description": "Deliciouspy Channel",
+		"keywords": "python, jamstack",
+		"author": "R Ja",
+		"theme-color": "#ffb74d"
+	},
+	"identity": {
+		"link": "https://t.me/deliciouspy",
+		"source": "https://github.com/deliciouspy/deliciouspy.github.io"
+	}
+}
