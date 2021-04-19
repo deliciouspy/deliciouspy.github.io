@@ -30,7 +30,13 @@ Winner will be put under this block with all his social media links.
             {
                 "title": "Winner/s",
                 "info": '''
-...
+There was no need for vote, there was only one valid submission by @angalaagl for:
+https://github.com/aglpy/hangman
+
+A Gif will follow. It was a well executed, multi language Hangman. Awesome!
+
+It made use of the ASCII lib: https://github.com/sepandhaghighi/art
+which allows you to write ASCII text in any ASCII font you like among others. Congratulations!
                 '''.strip('\n').replace('\n', '<br>')
             },
         ],
