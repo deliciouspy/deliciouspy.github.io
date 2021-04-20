@@ -33,7 +33,7 @@
                         <div class="icon bg-violet fg-white"><span class="mif-trophy"></span></div>
                         <div class="content p-4">
                             <div class="text-upper">tournaments</div>
-                            <div class="text-upper text-bold text-lead">1</div>
+                            <div class="text-upper text-bold text-lead">2</div>
                         </div>
                     </div>
                 </div>
@@ -66,9 +66,9 @@
         </div>
         <br>
         <div class="container">
-            {% set events = sorted(info['events'], reverse=True) %}
+            {% set events =info['events'] %}
             {% for event in events %}
-            <div id="event-{{ loop.index }}" data-role="panel" data-title-caption="#{{ loop.index }} {{ event['name'] }}" data-collapsible="{{ 'true' if loop.index==1 else 'false' }}">
+            <div id="event-{{ loop.index }}" data-role="panel" data-title-caption="#{{ loop.index }} {{ event['name'] }}" {{ "data-collapsible='true'" if loop.index==1 else "data-collapsible='false'" }}>
                 <div>
                     <div class="info-button success bd-green rounded">
                         <a href="#" class="button">Start</a>
@@ -84,7 +84,7 @@
                     <p>{{ section['info'] }}</p>
                 {% endfor %}
             <a href="{{ event['call to action'] }}" target="_blank" class="button primary">submit</a>
-            </div>
+            </div><br>
             {% endfor %}
 
         </div>

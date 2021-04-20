@@ -41,6 +41,34 @@ which allows you to write ASCII text in any ASCII font you like among others. Co
             },
         ],
         "call to action": "https://docs.google.com/forms/d/e/1FAIpQLSeamPyb_z-N_cjgGtFwOwlRgcbHD94nWVoZdyhF7ZUSKQc8PQ/viewform?usp=sf_link"
+    },
+    {
+        "name": "Terminal Chat Tournament",
+        "start": "Tue 20/April/2021",
+        "end": "Sun 25/April/2021 midnight",
+        "sections": [
+            {
+                "title": "Description",
+                "info": '''
+Build a terminal chat app using this code as base:
+https://github.com/pymug/ARJ_SpoonfeedingSockets_APR2021/tree/main/04_chat
+                '''.strip('\n').replace('\n', '<br>')
+            },
+            {
+                "title": "Winning",
+                "info": '''
+All submissions will be subjected to vote on the channel.
+Winner will be put under this block with all his social media links.
+                '''.strip('\n').replace('\n', '<br>')
+            },
+            {
+                "title": "Winner/s",
+                "info": '''
+---
+                '''.strip('\n').replace('\n', '<br>')
+            },
+        ],
+        "call to action": "https://forms.gle/DGJ9WmjNFeN8k5fG6"
     }
 ]
 
