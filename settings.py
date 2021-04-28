@@ -64,12 +64,44 @@ Winner will be put under this block with all his social media links.
             {
                 "title": "Winner/s",
                 "info": '''
----
+No winners
                 '''.strip('\n').replace('\n', '<br>')
             },
         ],
         "call to action": "https://forms.gle/DGJ9WmjNFeN8k5fG6"
-    }
+    },
+    {
+        "name": "Command Line Browser Tournament",
+        "start": "Wed 28/April/2021",
+        "end": "Sun 2/May/2021 midnight",
+        "sections": [
+            {
+                "title": "Description",
+                "info": '''
+Build a commandline browser. A program that displays the text of any webspage (not html).
+You can add options to display list of image links only or to display tables in tabular form.
+You might want to add features such as text summary etc etc, be creative.
+Bonus: Let users save custom user agents in files and let them choose. Add some default ones.
+
+BeautifulSoup lib suffices.
+                '''.strip('\n').replace('\n', '<br>')
+            },
+            {
+                "title": "Winning",
+                "info": '''
+All submissions will be subjected to vote on the channel.
+Winner will be put under this block with all his social media links.
+                '''.strip('\n').replace('\n', '<br>')
+            },
+            {
+                "title": "Winner/s",
+                "info": '''
+---
+                '''.strip('\n').replace('\n', '<br>')
+            },
+        ],
+        "call to action": "https://forms.gle/QdUuFoU5K9AVmpTQ8"
+    },
 ]
 
 info.update({

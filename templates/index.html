@@ -1,3 +1,4 @@
+{% set events =info['events'] %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +34,7 @@
                         <div class="icon bg-violet fg-white"><span class="mif-trophy"></span></div>
                         <div class="content p-4">
                             <div class="text-upper">tournaments</div>
-                            <div class="text-upper text-bold text-lead">2</div>
+                            <div class="text-upper text-bold text-lead">{{ len(events) }}</div>
                         </div>
                     </div>
                 </div>
@@ -41,8 +42,8 @@
                     <div class="icon-box border bd-default">
                         <div class="icon bg-green fg-white"><span class="mif-checkmark"></span></div>
                         <div class="content p-4">
-                            <div class="text-upper">daily views</div>
-                            <div class="text-upper text-bold text-lead">300</div>
+                            <div class="text-upper">daily views (all posts)</div>
+                            <div class="text-upper text-bold text-lead">900</div>
                         </div>
                     </div>
                 </div>
@@ -66,9 +67,14 @@
         </div>
         <br>
         <div class="container">
-            {% set events =info['events'] %}
+            
             {% for event in events %}
-            <div id="event-{{ loop.index }}" data-role="panel" data-title-caption="#{{ loop.index }} {{ event['name'] }}" {{ "data-collapsible='true'" if loop.index==1 else "data-collapsible='false'" }}>
+            <div 
+            id="event-{{ loop.index }}" 
+            data-role="panel" 
+            data-title-caption="#{{ loop.index }} {{ event['name'] }}" 
+            data-collapsible="true"
+            data-collapsed={{ "false" if loop.index==len(events) else "true" }}>
                 <div>
                     <div class="info-button success bd-green rounded">
                         <a href="#" class="button">Start</a>
