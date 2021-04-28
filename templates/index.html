@@ -1,4 +1,4 @@
-{% set events =info['events'] %}
+{% set events = list(reversed(info['events'])) %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,12 +69,13 @@
         <div class="container">
             
             {% for event in events %}
+            {% set event_number = len(events) - (loop.index -1 ) %}
             <div 
-            id="event-{{ loop.index }}" 
+            id="event-{{ event_number }}" 
             data-role="panel" 
-            data-title-caption="#{{ loop.index }} {{ event['name'] }}" 
+            data-title-caption="#{{ event_number }} {{ event['name'] }}" 
             data-collapsible="true"
-            data-collapsed={{ "false" if loop.index==len(events) else "true" }}>
+            data-collapsed={{ "false" if loop.index==1 else "true" }}>
                 <div>
                     <div class="info-button success bd-green rounded">
                         <a href="#" class="button">Start</a>
